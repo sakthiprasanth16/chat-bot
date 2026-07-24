@@ -34,7 +34,7 @@ WORKDIR /app
 COPY backend/requirements.txt .
 RUN pip install --no-cache-dir --user -r requirements.txt
 
-
+# new added
 COPY backend/app/ ./app/
 
 # Drop the built frontend where main.py's static mount expects it.
