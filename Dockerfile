@@ -34,11 +34,8 @@ WORKDIR /app
 COPY backend/requirements.txt .
 RUN pip install --no-cache-dir --user -r requirements.txt
 
-COPY backend/ ./app_src/
-# Backend code expects to be imported as the "app" package (see
-# `from app import database` etc. in main.py/context_manager.py/...),
-# so it lives at /app/app.
-RUN mv /app/app_src /app/app
+
+COPY backend/app/ ./app/
 
 # Drop the built frontend where main.py's static mount expects it.
 COPY --from=frontend-build /frontend/dist ./app/static
