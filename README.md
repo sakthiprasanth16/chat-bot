@@ -35,16 +35,16 @@ On top of that:
                      └──────────┬──────────────┘
                                 │
               ┌─────────────────┼─────────────────────┐
-              ▼                 ▼                      ▼
+              ▼                 ▼                     ▼
      ┌────────────────┐ ┌────────────────┐   ┌───────────────────────┐
      │ Jailbreak      │ │ MongoDB Atlas  │   │ Rolling Summarizer    │
      │ Pre-check      │ │ (conversation  │   │ (Gemini API call,     │
      │ (regex, local) │ │  history)      │   │  incremental)         │
      └────────────────┘ └────────────────┘   └───────────┬───────────┘
-                                │                          │ (only when the
-                                ▼                          │  token threshold
-                     ┌─────────────────────┐               │  is crossed)
-                     │    Gemini API       │◄──────────────┘
+                                │                        │ (only when the
+                                ▼                        │  token threshold
+                     ┌─────────────────────┐             │  is crossed)
+                     │    Gemini API       │◄────────────┘
                      │  (main chat model)  │
                      └─────────────────────┘
 ```
